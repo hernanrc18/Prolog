@@ -7,12 +7,26 @@ esUchiha(itachi).
 esUchiha(shisui).
 esUchiha(obito).
 
+
 amigos(sasuke,naruto).
 amigos(itachi,shisui).
 amigos(obito,kakashi).
 amigos(itachi,naruto).
 amigos(kakashi,rin).
 amigos(obito,rin).
+amigos(naruto,kurama).
+
+sensei(kakashi,sasuke).
+sensei(kakashi,naruto).
+sensei(jiraiya,naruto).
+
+madre(kushina,naruto).
+esposa(hinata,naruto).
+esposa(Sakura,sasuke).
+
+
+tieneContrato(naruto,sapos).
+entrena(fukusaku-sama,naruto).
 
 hermanos(sasuke,itachi).
 
@@ -46,7 +60,16 @@ esJinchuriki(X):-tieneSellado(X,_).
 tieneMangekyouSharingan(X):-esUchiha(X),vioMorir(X,Y),
 	(amigos(X,Y);hermanos(X,Y)).
 
-puedeUsarBijudama(X):- biju(X); esJinchuriki(X).
+aprendeRasengan(X):-sensei(X,Y).
+
+puedeUsarBijudama(X):-puedeTransformarseEnBiju(X).
 
 puedeDespertarElRinnegan(X):-esUchiha(X),tieneMangekyouSharingan(X).
+
+aprendeModoErmitaño(X):- tieneContrato(X,_),entrena(X,Y).
+
+perfeccionaRasenShuriken(X):-. aprendeModoErmitaño(X),aprendeRasengan(X).
+
+puedeTransformarseEnBiju(X):-amigos(X,Y),esJinchuriki(X),biju(X).
+
 
