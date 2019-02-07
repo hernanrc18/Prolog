@@ -73,3 +73,9 @@ perfeccionaRasenShuriken(X):-. aprendeModoErmitaño(X),aprendeRasengan(X).
 puedeTransformarseEnBiju(X):-amigos(X,Y),esJinchuriki(X),biju(X).
 
 
+
+
+
+
+
+
