@@ -1,0 +1,7 @@
+estaEnLista(X,Lista):-
+    Lista=[Cabeza|Cola],
+    X=Cabeza.
+estaEnLista(X,Lista):-
+    Lista=[Cabeza|Cola],
+    X\=Cabeza,
+    estaEnLista(X,Cola).

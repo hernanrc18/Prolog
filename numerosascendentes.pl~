@@ -1,0 +1,14 @@
+% Hacer una regla a la que le pases una lista de numeros
+% Y te de verdadero si los numeros son consecutivos y ascendentes.
+% [1,2,3,4] verdadero
+% [1,2,5]   falso
+
+numerosAscendentes([]).
+numerosAscendentes([X1,X2|L]):-
+    Aux1 is X1+1,
+    Aux2 is X2,
+    write("X1: "+X1),
+    write("X2: "+X2),
+    Aux1 == Aux2,
+    numerosAscendentes(L).
+
