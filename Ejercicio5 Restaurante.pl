@@ -44,11 +44,23 @@ echaHumo(X):- objeto(X); persona(X).
 usaDesodorante(X):- echaHumo(X).
 
 
-% 5) Todas las personas  puede usar un objeto
-% 6) Si una persona usa desodorante no hara la tarea
-% 7) Si usa desodorante y puede usar un objeto echa humo
-% 8)Cualquier animal que corre es feliz
-% 9) Los hippies son felices y pueden tocar el saxo
-% 10)libre
+% 5) Las cubetas vuelan
+vuelan(cubetas).
+% 6) Personas aprueban prolog
+personas(hernan).
+personas(diego).
+personas(kevin).
 
-
+apruebanProlog(X):- personas(X).
+% 7) Si pasa prolog toca saxo
+tocaSaxo(X):- apruebanProlog(X).
+% 8) Las cubetas no vuelan los viernes
+vuelan(pajaros).
+vuelanLosViernes(X):- (vuelan(X), not(vuelan(cubetas))).
+% 9) Si ando chilo no me toques
+andaChilo(hernan).
+notocar(X):- andaChilo(X).
+% 10) Si anda chilo no pasa prolog
+noPasaProlog(X):- andaChilo(X).
+% 11) Las cubetas siempre andan chilas
+siempreChilas(cubetas).
